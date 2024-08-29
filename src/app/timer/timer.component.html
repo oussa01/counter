@@ -1,0 +1,37 @@
+<div class="fullpage">
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+<div class="body">
+  <div class="title">
+    <h1>9adech mezzel lel big Daayyy</h1>
+  </div>
+  <div class="clock">
+    @for(unit of timeRemaining ;track unit;let i = $index){
+    <div
+      class="flip"
+       [class.running]="isFlipping[i]"
+    >
+      <div class="digital front" [attr.data-number]="unit"></div>
+      <div class="digital back" [attr.data-number]="nextTimeRemaining[i]"></div>
+     
+    </div>
+    <div class="unit-name">{{ unitNames[i] }}</div>
+    @if(!last){
+    <div class="divider"></div>
+    }
+  }
+</div>
+</div>
