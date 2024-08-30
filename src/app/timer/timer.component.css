@@ -1,3 +1,5 @@
+@import url("heart.css");
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Merienda:wght@300..900&display=swap');
 .body { 
   position: absolute; 
   overflow: hidden;     
@@ -116,7 +118,7 @@
 .title { 
   
   position: absolute; 
-  top: 10%; /* Distance from the top */ 
+  top: 2%; /* Distance from the top */ 
   width: 100%; 
   text-align: center; 
 } 
@@ -125,12 +127,24 @@
   font-weight: 700; 
   line-height: 1.5em; 
   padding-bottom: 65px; 
-  font-family: URW Chancery L, cursive; 
+ 
   text-transform: uppercase; 
-  letter-spacing: 2px; 
+  letter-spacing: 3px; 
   color: #FFF6EA; 
   padding-top: 10%; 
+  font-family: OCR A Std, monospace;
+
+
+  text-align: center;
+  text-transform: uppercase;
 } 
+.title h1 span {
+  color: #F05A7E;
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight:700;
+  font-style: normal;
+}
  
 .title h1:before { 
   display: flex; 
@@ -156,20 +170,9 @@
   height: 40px; 
   left: 50%; 
   margin-left: -20px; 
-  bottom: 0px; 
-  content: ""; 
-  font-size: 30px; 
-  line-height: 40px; 
-  --c: red; 
-  width: 40px; 
-  aspect-ratio: 1; 
-  background: 
-   radial-gradient(at 70% 31%,var(--c) 29%,#0000 30%), 
-   radial-gradient(at 30% 31%,var(--c) 29%,#0000 30%), 
-   linear-gradient(var(--c) 0 0) bottom/100% 50% no-repeat; 
-  clip-path: polygon(-43% 0,50% 91%, 143% 0); 
-  opacity: 0; 
-  animation: pulse 2s ease-in-out infinite; 
+
+ 
+
 } 
  
 @keyframes swell { 
@@ -180,50 +183,57 @@
     transform: translate(0, 5px); 
   } 
 } 
-@keyframes pulse { 
-  0% { 
-    transform: translateX(-50%) scale(1); 
-  } 
-  50% { 
-    transform: translateX(-50%) scale(1.2); /* Increase size */ 
-  } 
-  100% { 
-    transform: translateX(-50%) scale(1); 
-  } 
-} 
+
  
 .unit-name { 
   position: relative; 
-  top: -50px; /* Adjust as needed */ 
-  right: 10%; 
-  font-size: medium; 
+  top: -90px; 
+  right: 8%; 
+  font-size: 30px;
+  font-weight: 700;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", 
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif; 
   text-align: center; 
-  color: #FFF6EA; 
+  color: #FEECB3; 
 } 
  
 .clock { 
   position: relative; 
-  display: flex; 
-  padding: 1%; 
- justify-content: center; 
-  border: 2px solid black;
+  display: flex;
+  margin-top: 10%;
+  padding: 2%;
+  --mask:
+    radial-gradient(22.65px at 30.8px 50%, #000 99%, #0000 101%) 0 calc(50% - 22px)/51% 44px repeat-y,
+    radial-gradient(22.65px at -19.8px 50%, #0000 99%, #000 101%) 11px 50%/calc(51% - 11px) 44px repeat-y,
+    radial-gradient(22.65px at calc(100% - 30.8px) 50%, #000 99%, #0000 101%) 100% calc(50% - 22px)/51% 44px repeat-y,
+    radial-gradient(22.65px at calc(100% + 19.8px) 50%, #0000 99%, #000 101%) calc(100% - 11px) 50%/calc(51% - 11px) 44px repeat-y;
+
+
   
 } 
 .flip { 
   position: relative; 
+  display: flex;
   width: 93px; 
-  height: 170px; 
+  height: 190px; 
   font-size: 90px; 
   line-height: 180px; 
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
   text-align: center; 
   perspective: 100px; 
-  border: 1px solid rgb(79, 130, 220); 
-  border-radius: 5px; 
-  -webkit-box-shadow: 0 14px 9px rgba(16, 111, 244, 0.5); 
-  box-shadow: 0 0 6px rgba(141, 140, 197, 0.5); 
+
+ opacity: 90%;
+  box-shadow: 
+  0 0 20px 10px rgba(42, 159, 206, 0.5),
+  20px 0 20px -5px rgba(188, 20, 230, 0.5),
+  -20px 0 20px -5px rgba(243, 201, 17, 0.5),
+  0 20px 20px -5px rgba(78, 202, 78, 0.5),
+  0 -20px 20px -5px rgba(247, 132, 222, 0.5),
+  10px 10px 20px -10px rgba(247, 132, 222, 0.5),
+  -10px 10px 30px -10px rgba(247, 132, 222, 0.5),
+  10px -10px 30px -10px rgba(247, 132, 222, 0.5),
+  -10px -10px 30px -10px rgba(204, 37, 196, 0.5);
+  
 } 
  
 .digital::before, 
@@ -233,32 +243,32 @@
   left: 0; 
   right: 0; 
   border-style: dotted; 
-  color: #FEECB3; 
+  border-width: 5px;
+  color: #FFF6EA; 
   background: #ED3EF7; 
   overflow: hidden; 
-  -webkit-perspective: 160px; 
-  perspective: 160px; 
-   
+  box-shadow: 
+  10px -10px 30px -10px rgba(247, 132, 222, 0.5),
+  -10px -10px 30px -10px rgba(247, 132, 222, 0.5);
    
 } 
  
 .digital::before { 
   top: 0; 
   bottom: 50%; 
-  border-bottom: 1px solid #f879d2; 
+  border-bottom: 1px;
+  border-radius: 9px 9px 0 0 ; 
+  
 } 
  
 .digital::after { 
   top: 50%; 
   bottom: 0; 
   line-height: 0; 
-  border-radius: 0 0 2px 4px; 
+  border-radius: 0 0 9px 9px; 
 } 
- 
-.digital.front::after, 
-.digital.back::before { 
-  z-index: 1; 
-} 
+
+
  
 .digital.back::after { 
   -webkit-transform-origin: top center; 
@@ -267,6 +277,8 @@
   -webkit-transform: rotateX(0.5turn); 
   transform: rotateX(0.5turn); 
   z-index: 2; 
+  box-shadow: 
+  0 0 0 1px rgba(247, 132, 222, 0.5);
 } 
  
 .digital.front::before { 
@@ -283,11 +295,13 @@
   box-shadow: 0 -8px 6px rgba(240, 231, 231, 0.3); 
   -webkit-backface-visibility: hidden; 
   backface-visibility: hidden; 
+  
 } 
  
 .flip.running .back::after { 
   -webkit-animation: backFlipDown 0.6s ease-in-out; 
   animation: backFlipDown 0.6s ease-in-out; 
+  
 } 
  
 @-webkit-keyframes frontFlipDown { 
@@ -315,5 +329,81 @@
   to { 
     -webkit-transform: rotateX(0); 
     transform: rotateX(0); 
+  } 
+}
+.bott >svg{
+  position: relative;
+  padding: 6px;
+  width: 20px;
+  height: 20px;
+ }
+ .bott {
+  position: relative;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  top: 11%;
+  font-size: 20px;
+  font-weight: 600;
+ }
+@media (max-width: 500px) {
+  .clock {
+    flex-direction: column; /* Change layout to vertical */
+    align-items: center; /* Center content vertically */
+    max-height: fit-content;
+    margin-top: 20%;
+    --mask:
+    radial-gradient(22.65px at 50% 30.8px,#000 99%,#0000 101%) calc(50% - 22px) 0/44px 51% repeat-x,
+    radial-gradient(22.65px at 50% -19.8px,#0000 99%,#000 101%) 50% 11px/44px calc(51% - 11px) repeat-x,
+    radial-gradient(22.65px at 50% calc(100% - 30.8px),#000 99%,#0000 101%) calc(50% - 22px) 100%/44px 51% repeat-x,
+    radial-gradient(22.65px at 50% calc(100% + 19.8px),#0000 99%,#000 101%) 50% calc(100% - 11px)/44px calc(51% - 11px) repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  
+  }
+
+  .flip {
+    width: 60px; /* Adjust width for smaller screens */
+    height: 80px; /* Adjust height for smaller screens */
+    font-size: 50px; /* Adjust font size for smaller screens */
+    line-height: 80px; /* Adjust line height for smaller screens */
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
+    text-align: center; 
+  
+  }
+  
+ .bott >svg{
+  position: relative;
+  margin-top: 9%;
+  width: 20px;
+  height: 20px;
+ }
+ .bott {
+  position: absolute;
+  padding-top: 710px;
+  display: block;
+  font-size: medium;
+ }
+
+ .digital::before, 
+.digital::after { 
+  position: absolute; 
+  content: attr(data-number); 
+  left: 0; 
+  right: 0; 
+  border-style: dashed; 
+  border-width: 2px;
+  color: #FFF6EA; 
+  background: #ff2c72; 
+  overflow: hidden; 
+} 
+  .unit-name { 
+    
+    top: -2px; /* Adjust as needed */ 
+    left: 1%; 
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", 
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif; 
+    text-align: center; 
+    color: #FEECB3; 
   } 
 }

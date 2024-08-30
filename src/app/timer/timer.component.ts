@@ -16,11 +16,11 @@ export class TimerComponent implements OnInit,OnDestroy {
   nowTimeStr :string;
   nextTimeStr :string;
   last : boolean = false;
-  unitNames : string [] = ['years','month','days','hours','minutes','seconds']
+  unitNames : string [] = ['years','months','days','hours','minutes','seconds']
   lastTimeRemaining = { ...this.timeRemaining };
   private subscription: Subscription;
   constructor() {
-    this.targetDate = new Date('2028-10-22T00:00:00')
+    this.targetDate = new Date('2027-10-22T00:00:00')
   }
 
   ngOnInit(): void {
