@@ -81,43 +81,15 @@ export class TimerComponent implements OnInit,OnDestroy {
     this.nextTimeRemaining = this.calculateTime(distance);
   }
 
- private calculateTime(distance: number): number[] {
-    const now = new Date();
-    const targetDate = new Date(this.targetDate);
-
-    // Get the year difference
-    const years = targetDate.getFullYear() - now.getFullYear();
-    // Get the month difference
-    const months = targetDate.getMonth() - now.getMonth() + (years * 12);
-    // Get the day difference
-    const days = targetDate.getDate() - now.getDate();
-    // Get the hour difference
-    const hours = targetDate.getHours() - now.getHours();
-    // Get the minute difference
-    const minutes = targetDate.getMinutes() - now.getMinutes();
-    // Get the second difference
-    const seconds = targetDate.getSeconds() - now.getSeconds();
-
-    // Adjust for negative values
-    if (seconds < 0) {
-        seconds += 60;
-        minutes--;
-    }
-    if (minutes < 0) {
-        minutes += 60;
-        hours--;
-    }
-    if (hours < 0) {
-        hours += 24;
-        days--;
-    }
-    if (days < 0) {
-        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-        days += lastMonth.getDate();
-        months--;
-    }
+  private calculateTime(distance: number): number[] {
+    const years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365));
+    const months = Math.floor((distance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     return [years, months, days, hours, minutes, seconds];
-}
+  }
 
 }
