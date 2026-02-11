@@ -1,1 +1,5 @@
-<app-timer></app-timer>
+@if(!isAuthenticated) {
+  <app-secret-dialog (secretSubmitted)="onSecretSubmitted($event)"></app-secret-dialog>
+} @else {
+  <app-timer></app-timer>
+}

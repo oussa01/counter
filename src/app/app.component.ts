@@ -11,4 +11,5 @@ import { TimerComponent } from "./timer/timer.component";
 })
 export class AppComponent {
   title = 'countdown';
+  keyword:string ="imyours"
 }
