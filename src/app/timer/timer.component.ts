@@ -19,11 +19,13 @@ export class TimerComponent implements OnInit,OnDestroy {
   unitNames : string [] = ['years','months','days','hours','minutes','seconds']
   lastTimeRemaining = { ...this.timeRemaining };
   private subscription: Subscription;
+  public keyword:string;
   constructor() {
     this.targetDate = new Date('2031-10-22T00:00:00')
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {)
+    if(keyword=="imyours"){
     this.calculateTimeRemaining();
     this.subscription = interval(1000).subscribe(() => {
       this.lastTimeRemaining = { ...this.timeRemaining };
@@ -32,6 +34,7 @@ export class TimerComponent implements OnInit,OnDestroy {
         this.last = true;
       }
     });
+    }
   }
 
   ngOnDestroy(): void {
